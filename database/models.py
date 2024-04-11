@@ -15,6 +15,12 @@ class User(Base):
     tg_id = mapped_column(BigInteger)
     user_name: Mapped[str] = mapped_column(String)
 
+class Channel(Base):
+    __tablename__ = "channels"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    tg_id = mapped_column(BigInteger)
+    title: Mapped[str] = mapped_column(String)
+
 async def  async_main():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
