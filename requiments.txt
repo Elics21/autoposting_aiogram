@@ -1,4 +1,1 @@
-aiogram
-sqlalchemy
-aiosqlite
-db-sqlite3
+aiogram, sqlalchemy, aiosqlite, db-sqlite3

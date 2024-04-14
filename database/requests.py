@@ -17,3 +17,11 @@ async def set_channel(tg_id, title: str):
             channel = Channel(tg_id=tg_id, title=title)
             session.add(channel)
             await session.commit()
+
+async def get_all_channel():
+    async with async_session() as session:
+        return await session.scalars(select(Channel))
+
+async def get_channel(id: int):
+    async with async_session() as session:
+        return await session.scalar(select(Channel).where(Channel.id == id))

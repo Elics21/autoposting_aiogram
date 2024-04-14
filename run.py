@@ -5,7 +5,7 @@ from config import TOKEN
 from database.models import async_main
 from handlers.main_router import main_router
 
-bot = Bot(token=TOKEN)
+bot = Bot(token=TOKEN, parse_mode="HTML")
 dp = Dispatcher()
 
 async def main():
